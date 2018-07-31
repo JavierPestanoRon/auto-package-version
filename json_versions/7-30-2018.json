@@ -1,0 +1,45 @@
+{
+  "name": "auto-package-version",
+  "version": "0.1.0",
+  "description": "automate your package.json version when some package installed change",
+  "main": "build/index.js",
+  "scripts": {
+    "lint": "eslint lib/index.js",
+    "prebuild": "npm run lint",
+    "build": "babel lib --out-dir build",
+    "pretest": "npm run build",
+    "test": "babel-node test/index.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JavierPestanoRon/auto-package-version.git"
+  },
+  "keywords": [
+    "angular-cli",
+    "automatic versioning",
+    "package.json",
+    "version",
+    "version update",
+    "package update",
+    "update"
+  ],
+  "author": "Javier Pestano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JavierPestanoRon/auto-package-version/issues"
+  },
+  "homepage": "https://github.com/JavierPestanoRon/auto-package-version#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {
+    "app-root-path": "^2.1.0"
+  }
+}
