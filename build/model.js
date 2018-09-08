@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 function Version(symbol, major, minor, patch) {
   this.symbol = String(symbol);
   this.major = Number(major);
@@ -6,7 +11,7 @@ function Version(symbol, major, minor, patch) {
 }
 
 Version.prototype.compare = function compare(versionParam) {
-  let status = '';
+  var status = '';
   if (this.major !== versionParam.major) {
     status = 'major';
   } else if (this.minor !== versionParam.minor) {
@@ -21,14 +26,14 @@ Version.prototype.compare = function compare(versionParam) {
 
 // Function that take a version and return a Version Object
 Version.prototype.deserializeVersion = function deserializeVersion(version) {
-  const fields = version.split('.');
+  var fields = version.split('.');
   return new Version('', fields[0], fields[1], fields[2]);
 };
 
 // Function that take a Version Object and return a version string
 // Format: 'major.minor.path'
 Version.prototype.serializeVersion = function serializeVersion(version) {
-  return `${version.major}.${version.minor}.${version.patch}`;
+  return version.major + '.' + version.minor + '.' + version.patch;
 };
 
-export default Version;
+exports.default = Version;
